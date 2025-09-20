@@ -1,9 +1,9 @@
 
 
-import { Canvas } from "@react-three/fiber";
+// import { Canvas } from "@react-three/fiber";
 import { Suspense , useState} from "react";
-import { CameraControls, PerspectiveCamera , Environment, OrbitControls, ContactShadows} from "@react-three/drei";
-import Chillcat from '../public/Chillcat.jsx';
+// import { CameraControls, PerspectiveCamera , Environment, OrbitControls, ContactShadows} from "@react-three/drei";
+// import Chillcat from '../public/Chillcat.jsx';
 import IdeaPage from './IdeaPage.jsx';
 import DocPage from "./DocPage.jsx";
 import { FaLightbulb } from "react-icons/fa";
@@ -35,22 +35,11 @@ function App() {
     { currPage === "model" ?
     <div className = "justify-items-center">
 
-        <Canvas>
-      {/* default position is given by "camera" , default
-      position is set to 4 */}
-      <PerspectiveCamera makeDefault position = {[0,0,4]}/>
-      {/* intensity of light for model appearance */}
-      <ambientLight intensity = {0.5}/>
-      {/* can zoom in/out with thresholds for zoom in and zoom out */}
-      <OrbitControls enableZoom = {true} minDistance = {2} maxDistance = {7}/>
-      <Suspense fallback = {null}>
-        <Chillcat/>
-      </Suspense>
-      {/* makes appearance lighter */}
-      <Environment preset = "sunset" />
-      {/* provides a shadow under the model */}
-      <ContactShadows position = {[0, -0.5, 0]} opacity = {0.5} scale = {30} blur = {1} far = {10} resolution = {256} color = "#000000"/>
-    </Canvas>
+        <div className="flex flex-col items-center pt-20">
+            <h2 className="text-4xl font-[Fredoka] text-purple-600 mb-4">3D Model Coming Soon!</h2>
+            <p className="text-xl text-gray-600">The 3D viewer is temporarily disabled for testing.</p>
+            <p className="text-lg text-gray-500 mt-4">Try the Idea Generator instead! 💡</p>
+        </div>
      </div>
      : ( currPage === "ideaPage" ? <IdeaPage/> : <DocPage/> )}
     </>
